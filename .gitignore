@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Cache
+cache/
+*.cache
+
+# Debug/Test files
+debug_*.py
+test_*.py
+fix_*.py
+patch_*.py
+verify_*.py
+
+# Temporary HTML files
+*_0[0-9]*.htm
+*_0[0-9]*.html
+toho_*.htm
+taka_*.htm
+kikkoman_*.htm
+komatsu_*.htm
+yomeishu_*.html
+
+# Large files
+*.dmg
+*.zip
+*.gz
+
+# IDE
+.vscode/
+.cursor/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db

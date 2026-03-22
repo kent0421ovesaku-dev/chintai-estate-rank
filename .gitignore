@@ -9,6 +9,10 @@ __pycache__/
 cache/
 *.cache
 
+# Log files
+output/error.log
+output/errors.json
+
 # Debug/Test files
 debug_*.py
 test_*.py

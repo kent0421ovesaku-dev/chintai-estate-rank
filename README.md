@@ -59,3 +59,32 @@ python main.py --resume
 - EDINET API v2
 - 対象：東証上場企業（不動産業を除く）
 - 期間：過去14ヶ月分の有価証券報告書
+
+## Vercel デプロイについて
+
+Vercel では事前に生成された `output/index.html` を静的ファイルとして配信します。
+
+**重要な注意点:**
+- Vercel の環境変数設定で `EDINET_API_KEY` を設定する必要は**ありません**
+- 環境変数が必要なのは、ローカルで `python main.py --run` を実行する場合のみです
+- デプロイ設定:
+  - Build Command: （空欄）
+  - Output Directory: `output`
+  - Install Command: （空欄）
+
+**データ更新フロー:**
+```bash
+# 1. ローカルで環境変数を設定
+export EDINET_API_KEY="your_key"
+
+# 2. データ取得・HTML生成
+python main.py --run
+
+# 3. 生成物をコミット
+git add output/index.html output/results.csv
+git commit -m "Update data: $(date +%Y-%m-%d)"
+git push
+
+# 4. Vercel が自動デプロイ
+```
+

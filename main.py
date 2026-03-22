@@ -27,7 +27,14 @@ except ImportError:
     tqdm = None
 
 
-API_KEY = "62f626695cc5423db887b73e02d64377"
+# APIキーは環境変数から取得（セキュリティ対策）
+# 設定方法: export EDINET_API_KEY="your_api_key_here"
+API_KEY = os.getenv("EDINET_API_KEY")
+if not API_KEY:
+    print("ERROR: 環境変数 EDINET_API_KEY が設定されていません。")
+    print("設定方法: export EDINET_API_KEY=\"your_api_key_here\"")
+    sys.exit(1)
+
 BASE_URL = "https://api.edinet-fsa.go.jp/api/v2"
 HEADERS = {
     "Ocp-Apim-Subscription-Key": API_KEY,

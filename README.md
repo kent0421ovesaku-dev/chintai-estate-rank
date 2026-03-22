@@ -20,6 +20,21 @@
 pip install -r requirements.txt
 ```
 
+## 環境変数の設定
+
+EDINET APIキーを環境変数として設定してください：
+
+```bash
+# Bash/Zsh の場合
+export EDINET_API_KEY="your_api_key_here"
+
+# または .env ファイルに記載して source で読み込み
+echo 'export EDINET_API_KEY="your_api_key_here"' >> ~/.bashrc
+source ~/.bashrc
+```
+
+**重要**: APIキーはコード内に直接書かず、環境変数で管理してください。
+
 ## 使用方法
 
 ```bash
